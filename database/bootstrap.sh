@@ -13,5 +13,7 @@ mysql -uroot -p1234 --execute "USE libreria_asw";
 sudo mysql -u root -p1234 --execute "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '1234' with GRANT OPTION"
 sudo mysql -u root -p1234 --execute "FLUSH PRIVILEGES"
 
+sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+
 sudo service mysql restart
 mysql -uroot -p1234 --execute "USE libreria_asw";
